@@ -1,0 +1,17 @@
+streamlit
+pdfplumber
+python-docx
+spacy
+scikit-learn
+nltk
+sentence-transformers
+requests
+pandas
+numpy
+python-dotenv
+google-generativeai
+torch
+matplotlib
+plotly
+wordcloud
+reportlab
