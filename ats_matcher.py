@@ -2,13 +2,9 @@ import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-import re
-from spacy.cli import download
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
 
 def extract_keywords(text):
     """Extract keywords (nouns, skills, tools) from text using spaCy."""
