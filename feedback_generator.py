@@ -41,7 +41,7 @@ def generate_feedback(resume_text, jd_text, gemini_api_key=None):
     """
 
     if gemini_api_key is None:
-        gemini_api_key = os.getenv("GEMINI_API_KEY")
+        gemini_api_key = gemini_api_key or os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
 
     if not gemini_api_key:
         raise ValueError(
@@ -89,15 +89,16 @@ def generate_feedback(resume_text, jd_text, gemini_api_key=None):
         return feedback
 
     except Exception as e:
-        return {
-            "score": None,
-            "missing_skills": [],
-            "suggestions": [
-                "AI feedback generation failed. Please try again."
-            ],
-            "summary": "",
-            "error": str(e)
-        }
+    print("GEMINI ERROR:", e)
+
+    return {
+        "score": None,
+        "missing_skills": [],
+        "suggestions": [
+            f"AI feedback generation failed: {str(e)}"
+        ],
+        "summary": ""
+    }
 
 
 def parse_gemini_feedback(text):
