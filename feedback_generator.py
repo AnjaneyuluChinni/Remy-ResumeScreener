@@ -62,7 +62,7 @@ def generate_feedback(resume_text, jd_text, gemini_api_key=None):
     )
 
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-pro")
 
         response = model.generate_content(prompt)
 
