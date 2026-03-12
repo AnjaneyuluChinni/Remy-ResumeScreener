@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer, util
 import torch
- model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('all-MiniLM-L6-v2')
 def compute_semantic_similarity(resume_text: str, jd_text: str) -> float:
     """
     Returns a similarity score between 0 and 100 based on semantic understanding
