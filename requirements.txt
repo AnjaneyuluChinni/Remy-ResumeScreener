@@ -9,7 +9,7 @@ requests
 pandas
 numpy
 python-dotenv
-google-generativeai
+google-genai
 torch
 matplotlib
 plotly
