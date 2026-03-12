@@ -107,18 +107,5 @@ def parse_gemini_feedback(text):
 
     if summary_section:
         feedback["summary"] = summary_section.group(2).strip()
-
+    
     return feedback
-
-feedback = parse_gemini_feedback(text)
-
-# Fallback suggestions if parsing fails
-if not feedback["suggestions"]:
-    feedback["suggestions"] = [
-        "Add measurable achievements in your project descriptions",
-        "Include more keywords from the job description",
-        "Strengthen your professional summary with role-specific skills"
-    ]
-
-feedback['raw_response'] = text
-return feedback
